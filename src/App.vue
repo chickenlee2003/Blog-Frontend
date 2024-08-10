@@ -2,11 +2,11 @@
 </script>
 
 <template>
-  <div>
-    <h1></h1>
-  </div>
+  <q-layout>
+    <q-page-container>
+      <RouterView />
+    </q-page-container>
+  </q-layout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

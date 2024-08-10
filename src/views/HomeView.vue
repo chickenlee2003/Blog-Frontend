@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h1>Category View</h1>
+        <h1>Home View</h1>
     </div>
 </template>
+
 <script>
 export default {
 
