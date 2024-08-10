@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <h1>app.vue</h1>
+    <h1></h1>
   </div>
 </template>
 
