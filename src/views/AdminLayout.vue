@@ -53,25 +53,25 @@
           icon: 'post_add',
           label: 'Quản lý bài đăng',
           separator: false,
-          path: 'posts'
+          path: '/admin/posts'
         },
         {
           icon: 'style',
           label: 'Quản lý tags',
           separator: false,
-          path: 'tags'
+          path: '/admin/tags'
         },
         {
           icon: 'category',
           label: 'Quản lý danh mục',
           separator: true,
-          path: 'category'
+          path: '/admin/category'
         },
         {
           icon: 'groups',
           label: 'Quản lý thành viên',
           separator: false,
-          path: 'members'
+          path: '/admin/members'
         },
       ]
       return {

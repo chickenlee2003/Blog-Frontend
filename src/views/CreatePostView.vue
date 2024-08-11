@@ -2,8 +2,10 @@
   <div class="container">
     <h1>Tạo bài đăng</h1>
     <q-input class="title" v-model="post.title" label="Tiêu đề bài đăng" outlined></q-input>
-    <q-select label="Danh mục bài viết"></q-select>
-    <q-select filled v-model="modelMultiple" multiple :options="options" use-chips stack-label label="Tags" />
+    <div>
+      <q-select label="Danh mục bài viết"></q-select>
+      <q-select filled v-model="modelMultiple" multiple :options="options" use-chips stack-label label="Tags" />
+    </div>
     <QuillEditor theme="snow" />
   </div>
 </template>
@@ -12,6 +14,10 @@
   import { QuillEditor } from '@vueup/vue-quill'
   import '@vueup/vue-quill/dist/vue-quill.snow.css';
   import { reactive } from 'vue';
+  import categoryService from "../services/category.service";
+  import tagService from "../services/tag.service";
+  import { ref, onBeforeMount } from 'vue';
+
   const post = reactive({
     title: '',
     content: '',
@@ -23,9 +29,10 @@
 
   onBeforeMount(async () => {
     try {
-
+      category.value = await categoryService.getCategories();
+      tags.value = await tagService.getAllTag()
     } catch (error) {
-
+      console.log(error);
     }
   })
 </script>
