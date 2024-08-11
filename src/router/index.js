@@ -11,8 +11,16 @@ const router = createRouter({
           path: "tags",
           component: () => import("../views/TagView.vue"),
         },
+        {
+          path: "category",
+          component: () => import("../views/CategoryView.vue"),
+        }
       ],
-    },
+    },{
+      path: "/",
+      name: "client", 
+      component: () => import("../views/ClientLayout.vue"),
+    }
     
   ],
 });
