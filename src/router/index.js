@@ -17,6 +17,11 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: "/",
+      name: "client", 
+      component: () => import("../views/ClientLayout.vue"),
+    }
   ],
 });
 
