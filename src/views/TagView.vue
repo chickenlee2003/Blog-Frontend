@@ -18,7 +18,7 @@
         <td class="stt">{{ index + 1 }}</td>
         <td class="name">{{ tag.name }}</td>
         <td class="function"><q-icon class="icons" @click="handleOpenUpdate('update', tag.id)"
-            name="update"></q-icon><q-icon class="icons" name="delete"></q-icon>
+            name="update"></q-icon><q-icon class="icons" @click="hanldeDeleteTag(tag.id)" name="delete"></q-icon>
         </td>
       </tr>
 
@@ -163,6 +163,20 @@
       await handleAddTag();
     } else if (dialogState.value === 'update') {
       await handleUpdateTag(updatedId.value)
+    }
+  }
+
+  const hanldeDeleteTag = async (id) => {
+    const isConfirm = window.confirm("Bạn muốn xóa tag này?")
+    if (!isConfirm) {
+      return;
+    }
+    try {
+      await tagService.deleteTag(id);
+      const index = tags.value.findIndex(tag => tag.id === id);
+      tags.value.splice(index, 1);
+    } catch (error) {
+      console.log(error);
     }
   }
 
