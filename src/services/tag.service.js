@@ -16,6 +16,10 @@ class TagService {
   async updateTag(id, tag) {
     return (await api.patch(this.path + `/${id}`, tag)).data;
   }
+
+  async deleteTag(id) {
+    return (await api.delete(this.path + `/${id}`)).data;
+  }
 }
 
 export default new TagService();
